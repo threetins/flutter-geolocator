@@ -45,8 +45,7 @@ class BottomNavigationState extends State<GeolocatorExampleApp> {
     return BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
       items: <BottomNavigationBarItem>[
-        _buildBottomNavigationBarItem(
-            Icons.location_on, TabItem.singleLocation),
+        _buildBottomNavigationBarItem(Icons.location_on, TabItem.singleLocation),
         _buildBottomNavigationBarItem(Icons.clear_all, TabItem.locationStream),
         _buildBottomNavigationBarItem(Icons.redo, TabItem.distance),
       ],
@@ -54,11 +53,11 @@ class BottomNavigationState extends State<GeolocatorExampleApp> {
     );
   }
 
-  BottomNavigationBarItem _buildBottomNavigationBarItem(
-      IconData icon, TabItem tabItem) {
+  BottomNavigationBarItem _buildBottomNavigationBarItem(IconData icon, TabItem tabItem) {
     final String text = tabItem.toString().split('.').last;
-    final Color color =
-        _currentItem == tabItem ? Theme.of(context).primaryColor : Colors.grey;
+    final Color color = _currentItem == tabItem
+      ? Theme.of(context).primaryColor
+      : Colors.grey;
 
     return BottomNavigationBarItem(
       icon: Icon(
